@@ -6,9 +6,9 @@ Hope we can make progress together.
 
 [userguide](https://github.com/SuperSaiki/SuperSaiki.github.io/blob/master/Official%20direction%20for%20use)
 
-'''markdown
+```markdown
 # Machine Learning
-'''
+```
 
 ### 1.【2018-03-17】Perceptron Study
 
