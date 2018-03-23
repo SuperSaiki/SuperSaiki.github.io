@@ -1,5 +1,5 @@
 
-This code in the first link contains two ways to make this algorithm. One is to use numpy to build this algorithm from bottom up. The other way is to use sklearn directly and to be a "调包侠". The theory and mathmatics are in the book "统计学习方法" by doctor "Hang Li".
+This code in the first link contains two ways to make this algorithm. One is to use numpy to build this algorithm from bottom up. The other way is to use sklearn directly and to be a "调包侠". The theory and mathmatics are in the book "统计学习方法" by doctor "Hang Li". Also you can see the theory in the following references.
 
 Two references including code and theory from "知乎":
 
@@ -50,9 +50,8 @@ if __name__ == '__main__': # if this file is executed rather than being invoked,
         print("Unluckily, after 1000 iterations the data is still not correctly classified")
 ```
 
-```markdown
 # 2. Original form algorithm using sklearn
-
+```markdown
 from sklearn.datasets import make_classification
 from sklearn.linear_model import Perceptron
 from matplotlib import pyplot as plt
