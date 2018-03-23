@@ -36,10 +36,4 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 
 Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
 
-# Machine Learning
 
-## Perceptron implementing using two methods: 1) numpy. 2)sklearn. 
-
-[Perceptron](https://github.com/SuperSaiki/Saiki/blob/master/perceptron.py)
-
-The theory and mathmatics are in the book "统计学习方法" by doctor "Hang Li".
