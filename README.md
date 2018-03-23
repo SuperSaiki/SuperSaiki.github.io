@@ -12,7 +12,7 @@ Hope we can make progress together.
 
 ### 1.【2018-03-17】Perceptron
 
-[Perceptron](https://github.com/SuperSaiki/SuperSaiki.github.io/blob/master/perception.md)
+[Perceptron](https://github.com/SuperSaiki/SuperSaiki.github.io/blob/master/Perceptron.md)
 
 ### 2.【2018-03-21】 KNN (k-nearest neighbor)
 
