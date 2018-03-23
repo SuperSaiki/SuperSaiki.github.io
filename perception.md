@@ -1,5 +1,5 @@
 
-This code contains two ways to make this algorithm. One is to use numpy to build this algorithm from bottom up. The other way is to use sklearn directly and to be a "调包侠". The theory and mathmatics are in the book "统计学习方法" by doctor "Hang Li". Also you can see the theory in the following references.
+This code contains two ways to make this algorithm. One is to use numpy to build this algorithm from bottom up. The other way is to use sklearn directly and to be a "调包侠". The theory and mathmatics are in the book "统计学习方法" by doctor "Hang Li". Also you can check the theory in the following references.
 
 Two references including code and theory from "知乎":
 
