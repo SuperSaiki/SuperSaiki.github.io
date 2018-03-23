@@ -8,7 +8,7 @@ Giving a training data set, for any new point, find its nearest k points. And th
 
 #### 2.2 Different types of distance measurements
 
-![distance measurement] (https://pic4.zhimg.com/80/v2-60bb382b0d22ec0ce296ed0e024f31bc_hd.jpg)
+![distance measurement](https://pic4.zhimg.com/80/v2-60bb382b0d22ec0ce296ed0e024f31bc_hd.jpg)
 
 #### 2.3 The choose of parameter "k"
 
