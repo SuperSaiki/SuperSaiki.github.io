@@ -20,11 +20,15 @@ If k is large, the model will be easy. The estimation error will decrease, but t
 
 In application, we always choose a small "k" first, then use cross validation to find the best "k".
 
-### 3.4 normalisation.
+### 3.4 Normalisation.
+
 To remove the dimention influence. We need to normalise the data.
 
 ![normalisation](https://pic1.zhimg.com/80/v2-be30691d37ac93b2237217cadca2e967_hd.jpg)
 
+### 3.5 Construct a kd-tree and make nearest neighbor search using kd-tree
 
+Every leaf note contains: 1)characteristic coordinate. 2)Segregate Shaft. 3)Indicator direct to the left. 4)Indicator direct to the right.
+For detailed describtion see LiHang's book "Statistic Learning Method" or check the references.
 
 
