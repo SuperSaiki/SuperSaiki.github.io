@@ -1,3 +1,4 @@
+# Perceptron
 
 ## This page is a little bit sketchy for its my first record. The following records will be more detailed with pictures, explainings and codes.
 
@@ -9,7 +10,7 @@ Two references including code and theory from "ZhiHu":
 
 [Use sklearn to do perceptron, Norlan](https://zhuanlan.zhihu.com/p/27152953)
 
-# 1. Original form algorithm
+### 1. Original form algorithm
 
 ```markdown
 # input raw data
@@ -52,7 +53,7 @@ if __name__ == '__main__': # if this file is executed rather than being invoked,
         print("Unluckily, after 1000 iterations the data is still not correctly classified")
 ```
 
-# 2. Original form algorithm using sklearn
+### 2. Original form algorithm using sklearn
 ```markdown
 from sklearn.datasets import make_classification
 from sklearn.linear_model import Perceptron
