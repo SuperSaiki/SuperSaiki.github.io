@@ -279,9 +279,14 @@ print(score)
 ```
 
 #### References
-[一文搞懂k近邻（k-NN）算法](https://zhuanlan.zhihu.com/p/26029567)
+[一文搞懂k近邻（k-NN）算法](https://zhuanlan.zhihu.com/p/26029567
+
 [一只兔子帮你理解 kNN](https://www.joinquant.com/post/2227?f=zh&%3Bm=23028465)
+
 [KNN算法详解](https://www.joinquant.com/post/2843)
+
 [用sklearn实现knn](https://www.joinquant.com/post/3227?f=study&m=math)
+
 [从K近邻算法、距离度量谈到KD树、SIFT+BBF算法](https://blog.csdn.net/v_july_v/article/details/8203674)
+
 [利用sklearn学习统计学习方法](https://zhuanlan.zhihu.com/p/27161407)
