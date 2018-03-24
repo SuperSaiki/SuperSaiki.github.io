@@ -279,7 +279,7 @@ print(score)
 ```
 
 #### References
-[一文搞懂k近邻（k-NN）算法](https://zhuanlan.zhihu.com/p/26029567
+[一文搞懂k近邻（k-NN）算法](https://zhuanlan.zhihu.com/p/26029567)
 
 [一只兔子帮你理解 kNN](https://www.joinquant.com/post/2227?f=zh&%3Bm=23028465)
 
