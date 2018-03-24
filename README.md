@@ -14,7 +14,11 @@ Hope we can make progress together.
 
 [Perceptron](https://github.com/SuperSaiki/SuperSaiki.github.io/blob/master/Perceptron.md)
 
-### 2.【2018-03-21】 KNN (k-nearest neighbor)
+### 2.【2018-03-21】KNN (k-nearest neighbor)
 
 [KNN](https://github.com/SuperSaiki/SuperSaiki.github.io/blob/master/KNN.md)
+
+### 3.【2018-03-25】Reinforcement Learning (1)
+
+[Reinforcement Learning (1)](https://github.com/SuperSaiki/SuperSaiki.github.io/blob/master/Reinforcement_Learning_01.md)
 
