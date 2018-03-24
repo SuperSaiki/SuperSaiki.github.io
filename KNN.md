@@ -31,7 +31,7 @@ To remove the dimention influence. We need to normalise the data.
 Every leaf note contains: 1)characteristic coordinate. 2)Segregate Shaft. 3)Indicator direct to the left. 4)Indicator direct to the right.
 For detailed describtion see LiHang's book "Statistic Learning Method" or check the references.
 
-### 3.6 Code (Note that class is also an object，so it can also be assigned to another variable. Also there is something called meta class(元类))
+### 3.6 Code (Note that class is also an object，so it can also be assigned to another variable. Also there is something called metaclass(元类))
 
 #### 1) Without using sklearn
 ```markdown
@@ -183,4 +183,105 @@ print(a.name)
 print(a.age.name)
 print(type(a.age.age.age.age.age))
 ```
+#### 2. Use sklearn
 
+### sklearn knn 参数详解
+neighbors.KNeighborsClassifier(n_neighbors=5, weights=’uniform’, algorithm=’auto’, leaf_size=30, p=2, metric=’minkowski’, metric_params=None, n-jobs=1)
+
+n_neighbors: k的个数
+
+weights：临近实例的权重，可以取三个值，‘uniform’为权重相同的情况，‘distance’是按照距离的倒数进行加权，也可以自己定义函数来对权值进行设定
+
+algorithm：是分类时采取的算法，有 'brute'、'kd_tree' 和 'ball_tree'。kd_tree 的算法在 kd 树文章中有详细介绍，而 ball_tree 是另一种基于树状结构的 kNN 算法，brute 则是最直接的蛮力计算。根据样本量的大小和特征的维度数量，不同的算法有各自的优势。默认的 'auto' 选项会在学习时自动选择最合适的算法，所以一般来讲选择 auto 就可以。
+
+leaf_size：是 kd_tree 或 ball_tree 生成的树的树叶（树叶就是二叉树中没有分枝的节点）的大小。在 kd 树文章中我们所有的二叉树的叶子中都只有一个数据点，但实际上树叶中可以有多于一个的数据点，算法在达到叶子时在其中执行蛮力计算即可。对于很多使用场景来说，叶子的大小并不是很重要，我们设 leaf_size=1 就好。
+
+metric 和 p，是我们在 kNN 入门文章中介绍过的距离函数的选项，如果 metric ='minkowski' 并且 p=p 的话，计算两点之间的距离就是
+
+d((x1,…,xn),(y1,…,yn))=(∑i=1n|xi−yi|p)1/p
+
+一般来讲，默认的 metric='minkowski'（默认）和 p=2（默认）就可以满足大部分需求。其他的 metric 选项可见说明文档。metric_params 是一些特殊 metric 选项需要的特定参数，默认是 None。
+
+n_jobs 是并行计算的线程数量，默认是 1，输入 -1 则设为 CPU 的内核数。
+```markdown
+import random
+from sklearn import neighbors
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.colors import ListedColormap
+
+#生成随机数
+x1 = np.random.normal(50, 6, 200)
+y1 = np.random.normal(5, 0.5, 200)
+
+x2 = np.random.normal(30,6,200)
+y2 = np.random.normal(4,0.5,200)
+
+x3 = np.random.normal(45,6,200)
+y3 = np.random.normal(2.5, 0.5, 200)
+
+'''
+x1、x2、x3 作为 x 坐标，y1、y2、y3 作为 y 坐标，两两配对。
+(x1,y1) 标为 1 类，(x2, y2) 标为 2 类，(x3, y3)是 3 类。
+可它们画出，1 类是蓝色，2 类红色，3 类绿色。
+'''
+plt.scatter(x1,y1,c='b',marker='s',s=50,alpha=0.8)
+plt.scatter(x2,y2,c='r', marker='^', s=50, alpha=0.8)
+plt.scatter(x3,y3, c='g', s=50, alpha=0.8)
+plt.show()
+
+x_val = np.concatenate((x1,x2,x3))
+y_val = np.concatenate((y1,y2,y3))
+
+#归一化
+x_diff = max(x_val)-min(x_val)
+y_diff = max(y_val)-min(y_val)
+
+x_normalized = [x/(x_diff) for x in x_val]
+y_normalized = [y/(y_diff) for y in y_val]
+xy_normalized = list(zip(x_normalized,y_normalized))
+
+labels = [1]*200+[2]*200+[3]*200
+
+clf = neighbors.KNeighborsClassifier(30)
+#训练完成
+clf.fit(xy_normalized, labels)
+
+#首先，我们想知道 (50,5) 和 (30,3) 两个点附近最近的 5 个样本分别都是什么。坐标别忘了除以 x_diff 和 y_diff 来归一化。
+nearests = clf.kneighbors([(50/x_diff, 5/y_diff),(30/x_diff, 3/y_diff)], 5, False)
+print(nearests)
+
+#类别预测
+prediction = clf.predict([(50/x_diff, 5/y_diff),(30/x_diff, 3/y_diff)])
+print(prediction)
+
+#概率预测
+prediction_proba = clf.predict_proba([(50/x_diff, 5/y_diff),(30/x_diff, 3/y_diff)])
+print(prediction_proba)
+
+#准确率打分，生成测试数据集
+x1_test = np.random.normal(50, 6, 100)
+y1_test = np.random.normal(5, 0.5, 100)
+
+x2_test = np.random.normal(30,6,100)
+y2_test = np.random.normal(4,0.5,100)
+
+x3_test = np.random.normal(45,6,100)
+y3_test = np.random.normal(2.5, 0.5, 100)
+
+xy_test_normalized = list(zip(np.concatenate((x1_test,x2_test,x3_test))/x_diff,\
+                        np.concatenate((y1_test,y2_test,y3_test))/y_diff))
+
+labels_test = [1]*100+[2]*100+[3]*100
+
+score = clf.score(xy_test_normalized, labels_test)
+print(score)
+```
+
+#### References
+[一文搞懂k近邻（k-NN）算法](https://zhuanlan.zhihu.com/p/26029567)
+[一只兔子帮你理解 kNN](https://www.joinquant.com/post/2227?f=zh&%3Bm=23028465)
+[KNN算法详解](https://www.joinquant.com/post/2843)
+[用sklearn实现knn](https://www.joinquant.com/post/3227?f=study&m=math)
+[从K近邻算法、距离度量谈到KD树、SIFT+BBF算法](https://blog.csdn.net/v_july_v/article/details/8203674)
+[利用sklearn学习统计学习方法](https://zhuanlan.zhihu.com/p/27161407)
