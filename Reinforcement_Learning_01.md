@@ -2,11 +2,11 @@
 
 ## markov decision processes (MDP)：(S,A,P,R,γ)
 
-### state transistion probability 
+### 1. state transistion probability 
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{120}&space;\large&space;P_{a}^{ss'}=P[S_{t=1}=s',A_{t}=a]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;\large&space;P_{a}^{ss'}=P[S_{t=1}=s',A_{t}=a]" title="\large P_{a}^{ss'}=P[S_{t=1}=s',A_{t}=a]" /></a>
 
-### policy: π
+### 2. policy: π
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{120}&space;\large&space;\pi(a|s)=p[A_{t}=a|S_{t}=s]" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;\large&space;\pi(a|s)=p[A_{t}=a|S_{t}=s]" title="\large \pi(a|s)=p[A_{t}=a|S_{t}=s]" /></a>
 
