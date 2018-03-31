@@ -50,3 +50,7 @@ Specific Calculation Process:
 (2) ϵ-greedy stratedy
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;$$&space;\pi_{*}(a|s)=\left\{&space;\begin{array}{rcl}&space;1-\varepsilon&plus;\frac{\varepsilon}{|A(s)|}&space;&&space;&&space;{if\,&space;\:&space;a=\underset{a\in&space;A}{argmax}\,&space;q_{*}(s,a)}\\&space;\frac{\varepsilon}{|A(s)|}&space;&&space;&&space;{otherwise}\\&space;\end{array}&space;\right.&space;$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;$$&space;\pi_{*}(a|s)=\left\{&space;\begin{array}{rcl}&space;1-\varepsilon&plus;\frac{\varepsilon}{|A(s)|}&space;&&space;&&space;{if\,&space;\:&space;a=\underset{a\in&space;A}{argmax}\,&space;q_{*}(s,a)}\\&space;\frac{\varepsilon}{|A(s)|}&space;&&space;&&space;{otherwise}\\&space;\end{array}&space;\right.&space;$$" title="$$ \pi_{*}(a|s)=\left\{ \begin{array}{rcl} 1-\varepsilon+\frac{\varepsilon}{|A(s)|} & & {if\, \: a=\underset{a\in A}{argmax}\, q_{*}(s,a)}\\ \frac{\varepsilon}{|A(s)|} & & {otherwise}\\ \end{array} \right. $$" /></a>
+
+### 9. Example explanation based on gym
+
+```markdown
