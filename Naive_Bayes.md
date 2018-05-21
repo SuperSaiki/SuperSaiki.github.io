@@ -73,3 +73,38 @@ def bagOfWords2VecMN(vocabList, inputSet):
       p0Vect = log(p0Num/p0Denom)#change to log()
       return p0Vect,p1Vect,pAbusive
 ```
+### 2.3 测试算法
+```python
+def classifyNB(vec2Classify, p0Vec, p1Vec, pClass1):
+ 2     '''
+ 3     分类函数
+ 4     vec2Classify:要分类的向量
+ 5     p0Vec, p1Vec, pClass1:分别对应trainNB0计算得到的3个概率
+ 6     '''
+ 7     p1 = sum(vec2Classify * p1Vec) + log(pClass1)
+ 8     p0 = sum(vec2Classify * p0Vec) + log(1.0 - pClass1)
+ 9     if p1 > p0:
+10         return 1
+11     else: 
+12         return 0
+```
+测试：
+```python
+ def testingNB():
+ 2     listOPosts,listClasses = loadDataSet()
+ 3     myVocabList = createVocabList(listOPosts)
+ 4     trainMat=[]
+ 5     for postinDoc in listOPosts:
+ 6         trainMat.append(setOfWords2Vec(myVocabList, postinDoc))
+ 7     #训练模型，注意此处使用array
+ 8     p0V,p1V,pAb = trainNB0(array(trainMat),array(listClasses))
+ 9     testEntry = ['love', 'my', 'dalmation']
+10     thisDoc = array(setOfWords2Vec(myVocabList, testEntry))
+11     print(testEntry,'classified as: ',classifyNB(thisDoc,p0V,p1V,pAb))
+12     testEntry = ['stupid', 'garbage']
+13     thisDoc = array(setOfWords2Vec(myVocabList, testEntry))
+14     print(testEntry,'classified as: ',classifyNB(thisDoc,p0V,p1V,pAb))
+```
+参考文档：
+[使用sklearn](https://blog.csdn.net/zhiaicq_r/article/details/79228932)
+[机器学习实战之朴素贝叶斯](http://blog.sina.com.cn/s/blog_13eaccf160102xgmu.html)
