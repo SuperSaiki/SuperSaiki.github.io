@@ -106,6 +106,7 @@ def classifyNB(vec2Classify, p0Vec, p1Vec, pClass1):
 14     print(testEntry,'classified as: ',classifyNB(thisDoc,p0V,p1V,pAb))
 ```
 参考文档：
-[使用sklearn](https://blog.csdn.net/zhiaicq_r/article/details/79228932)
 
-[机器学习实战之朴素贝叶斯](http://blog.sina.com.cn/s/blog_13eaccf160102xgmu.html)
+[1. 使用sklearn](https://blog.csdn.net/zhiaicq_r/article/details/79228932)
+
+[2. 机器学习实战之朴素贝叶斯](http://blog.sina.com.cn/s/blog_13eaccf160102xgmu.html)
